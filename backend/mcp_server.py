@@ -3,7 +3,8 @@ import os
 from tempfile import NamedTemporaryFile
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("Context Layer")
+# Enforce 0.0.0.0 via internal initializations preventing "Invalid Host header" errors from strict validation
+mcp = FastMCP("Context Layer", host="0.0.0.0")
 
 MAIN_GRAPH = os.path.join(os.path.dirname(__file__), "graph_main.json")
 
