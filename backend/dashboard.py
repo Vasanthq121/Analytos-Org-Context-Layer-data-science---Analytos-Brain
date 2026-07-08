@@ -9,7 +9,7 @@ st.set_page_config(
 
 st.title("Knowledge Graph Dashboard")
 
-MAIN_GRAPH = "graph_main.json"
+MAIN_GRAPH = os.path.join(os.path.dirname(__file__), "graph_main.json")
 
 if not os.path.exists(MAIN_GRAPH):
     st.error("graph_main.json not found.")
