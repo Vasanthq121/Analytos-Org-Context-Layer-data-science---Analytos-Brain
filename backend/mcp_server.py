@@ -75,9 +75,8 @@ def get_entity_connections(agent_role: str, entity_id: str) -> str:
 
 if __name__ == "__main__":
     if os.getenv("PORT"):
-        # If hosted in cloud (Render/Railway), serve via SSE on specified PORT
-        port = int(os.getenv("PORT", 8000))
-        mcp.run(transport="sse", port=port)
+        # If hosted in cloud (Render/Railway), serve via SSE (port is automatically resolved from OS ENV by underlying uvicorn)
+        mcp.run(transport="sse")
     else:
         # Local execution for Claude Desktop (stdio)
         mcp.run()
