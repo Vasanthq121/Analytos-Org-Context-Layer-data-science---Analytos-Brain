@@ -1,0 +1,280 @@
+{
+    "branch": "ingest/20260708225904",
+    "nodes": [
+        {
+            "id": "product_stockly",
+            "label": "Product",
+            "properties": {
+                "name": "Stockly"
+            }
+        },
+        {
+            "id": "proof_inventory_cost_reduction",
+            "label": "ProofPoint",
+            "properties": {
+                "metric": "inventory cost reduction",
+                "value": 20.0,
+                "unit": "%"
+            }
+        },
+        {
+            "id": "icp_retail",
+            "label": "ICPSegment",
+            "properties": {
+                "industry": "Retail"
+            }
+        },
+        {
+            "id": "persona_sales_manager",
+            "label": "Persona",
+            "properties": {
+                "title": "Sales Manager"
+            }
+        },
+        {
+            "id": "product_inspectly",
+            "label": "Product",
+            "properties": {
+                "name": "Inspectly"
+            }
+        },
+        {
+            "id": "proof_defect_rate_drop",
+            "label": "ProofPoint",
+            "properties": {
+                "metric": "Defect rate drop",
+                "value": 18.0,
+                "unit": "%"
+            }
+        },
+        {
+            "id": "icp_medtech",
+            "label": "ICPSegment",
+            "properties": {
+                "industry": "Medtech"
+            }
+        },
+        {
+            "id": "persona_vp_of_quality",
+            "label": "Persona",
+            "properties": {
+                "title": "VP of Quality"
+            }
+        },
+        {
+            "id": "product_analytos",
+            "label": "Product",
+            "properties": {
+                "name": "Analytos"
+            }
+        },
+        {
+            "id": "feature_easy_integration",
+            "label": "Feature",
+            "properties": {
+                "name": "Easy Integration"
+            }
+        },
+        {
+            "id": "feature_clear_roi",
+            "label": "Feature",
+            "properties": {
+                "name": "Clear ROI"
+            }
+        },
+        {
+            "id": "icp_enterprise_retail,_mid-market_manufacturing",
+            "label": "ICPSegment",
+            "properties": {
+                "industry": "Enterprise Retail, Mid-market Manufacturing"
+            }
+        },
+        {
+            "id": "persona_vp_of_operations,_cio",
+            "label": "Persona",
+            "properties": {
+                "title": "VP of Operations, CIO"
+            }
+        },
+        {
+            "id": "product_inspectly",
+            "label": "Product",
+            "properties": {
+                "name": "Inspectly"
+            }
+        },
+        {
+            "id": "feature_visual_defect_detection",
+            "label": "Feature",
+            "properties": {
+                "name": "Visual Defect Detection"
+            }
+        },
+        {
+            "id": "feature_real-time_alerts",
+            "label": "Feature",
+            "properties": {
+                "name": "Real-time Alerts"
+            }
+        },
+        {
+            "id": "proof_defect_rate_reduction",
+            "label": "ProofPoint",
+            "properties": {
+                "metric": "Defect Rate Reduction",
+                "value": 15.0,
+                "unit": "%"
+            }
+        },
+        {
+            "id": "icp_manufacturing",
+            "label": "ICPSegment",
+            "properties": {
+                "industry": "Manufacturing"
+            }
+        },
+        {
+            "id": "persona_quality_assurance_lead",
+            "label": "Persona",
+            "properties": {
+                "title": "Quality Assurance Lead"
+            }
+        },
+        {
+            "id": "product_stockly",
+            "label": "Product",
+            "properties": {
+                "name": "Stockly"
+            }
+        },
+        {
+            "id": "feature_ai_forecasting",
+            "label": "Feature",
+            "properties": {
+                "name": "AI Forecasting"
+            }
+        },
+        {
+            "id": "feature_inventory_optimization",
+            "label": "Feature",
+            "properties": {
+                "name": "Inventory Optimization"
+            }
+        },
+        {
+            "id": "proof_inventory_costs_reduction",
+            "label": "ProofPoint",
+            "properties": {
+                "metric": "inventory costs reduction",
+                "value": 22.0,
+                "unit": "%"
+            }
+        },
+        {
+            "id": "icp_retail_chains",
+            "label": "ICPSegment",
+            "properties": {
+                "industry": "Retail Chains"
+            }
+        },
+        {
+            "id": "persona_supply_chain_manager",
+            "label": "Persona",
+            "properties": {
+                "title": "Supply Chain Manager"
+            }
+        }
+    ],
+    "edges": [
+        {
+            "source": "product_stockly",
+            "relation": "TARGETS",
+            "target": "icp_retail"
+        },
+        {
+            "source": "icp_retail",
+            "relation": "HAS_PERSONA",
+            "target": "persona_sales_manager"
+        },
+        {
+            "source": "product_inspectly",
+            "relation": "TARGETS",
+            "target": "icp_medtech"
+        },
+        {
+            "source": "icp_medtech",
+            "relation": "HAS_PERSONA",
+            "target": "persona_vp_of_quality"
+        },
+        {
+            "source": "product_analytos",
+            "relation": "HAS_FEATURE",
+            "target": "feature_easy_integration"
+        },
+        {
+            "source": "product_analytos",
+            "relation": "HAS_FEATURE",
+            "target": "feature_clear_roi"
+        },
+        {
+            "source": "product_analytos",
+            "relation": "TARGETS",
+            "target": "icp_enterprise_retail,_mid-market_manufacturing"
+        },
+        {
+            "source": "icp_enterprise_retail,_mid-market_manufacturing",
+            "relation": "HAS_PERSONA",
+            "target": "persona_vp_of_operations,_cio"
+        },
+        {
+            "source": "product_inspectly",
+            "relation": "HAS_FEATURE",
+            "target": "feature_visual_defect_detection"
+        },
+        {
+            "source": "product_inspectly",
+            "relation": "HAS_FEATURE",
+            "target": "feature_real-time_alerts"
+        },
+        {
+            "source": "feature_visual_defect_detection",
+            "relation": "PROVEN_BY",
+            "target": "proof_defect_rate_reduction"
+        },
+        {
+            "source": "product_inspectly",
+            "relation": "TARGETS",
+            "target": "icp_manufacturing"
+        },
+        {
+            "source": "icp_manufacturing",
+            "relation": "HAS_PERSONA",
+            "target": "persona_quality_assurance_lead"
+        },
+        {
+            "source": "product_stockly",
+            "relation": "HAS_FEATURE",
+            "target": "feature_ai_forecasting"
+        },
+        {
+            "source": "product_stockly",
+            "relation": "HAS_FEATURE",
+            "target": "feature_inventory_optimization"
+        },
+        {
+            "source": "feature_ai_forecasting",
+            "relation": "PROVEN_BY",
+            "target": "proof_inventory_costs_reduction"
+        },
+        {
+            "source": "product_stockly",
+            "relation": "TARGETS",
+            "target": "icp_retail_chains"
+        },
+        {
+            "source": "icp_retail_chains",
+            "relation": "HAS_PERSONA",
+            "target": "persona_supply_chain_manager"
+        }
+    ]
+}

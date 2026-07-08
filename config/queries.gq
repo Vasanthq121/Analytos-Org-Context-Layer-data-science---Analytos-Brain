@@ -1,0 +1,29 @@
+// Get product facts, features, and metrics
+query get_product_details($name: String) {
+    match {
+        $prod: Product { name: $name }
+        $prod HAS_FEATURE $f
+        $prod PROVEN_BY $m
+    }
+    return {
+        $prod.name,
+        $prod.description,
+        $f.name as feature_name,
+        $m.name as metric_name,
+        $m.value as metric_value
+    }
+}
+
+// Get ICP segments and personas for a product
+query get_product_icp($name: String) {
+    match {
+        $prod: Product { name: $name }
+        $prod TARGETS $icp
+        $icp TARGETS_PERSONA $persona
+    }
+    return {
+        $prod.name,
+        $icp.name as segment_name,
+        $persona.name as persona_name
+    }
+}

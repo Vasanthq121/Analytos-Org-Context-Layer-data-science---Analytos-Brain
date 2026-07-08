@@ -1,0 +1,75 @@
+{
+    "nodes": [
+        {
+            "id": "product_stockly",
+            "label": "Product",
+            "properties": {
+                "name": "Stockly"
+            }
+        },
+        {
+            "id": "feature_ai_forecasting",
+            "label": "Feature",
+            "properties": {
+                "name": "AI Forecasting"
+            }
+        },
+        {
+            "id": "feature_inventory_optimization",
+            "label": "Feature",
+            "properties": {
+                "name": "Inventory Optimization"
+            }
+        },
+        {
+            "id": "proof_inventory_costs_reduced",
+            "label": "ProofPoint",
+            "properties": {
+                "metric": "inventory costs reduced",
+                "value": 22.0,
+                "unit": "%"
+            }
+        },
+        {
+            "id": "icp_retail",
+            "label": "ICPSegment",
+            "properties": {
+                "industry": "Retail"
+            }
+        },
+        {
+            "id": "persona_supply_chain_manager",
+            "label": "Persona",
+            "properties": {
+                "title": "Supply Chain Manager"
+            }
+        }
+    ],
+    "edges": [
+        {
+            "source": "product_stockly",
+            "relation": "HAS_FEATURE",
+            "target": "feature_ai_forecasting"
+        },
+        {
+            "source": "product_stockly",
+            "relation": "HAS_FEATURE",
+            "target": "feature_inventory_optimization"
+        },
+        {
+            "source": "feature_ai_forecasting",
+            "relation": "PROVEN_BY",
+            "target": "proof_inventory_costs_reduced"
+        },
+        {
+            "source": "product_stockly",
+            "relation": "TARGETS",
+            "target": "icp_retail"
+        },
+        {
+            "source": "icp_retail",
+            "relation": "HAS_PERSONA",
+            "target": "persona_supply_chain_manager"
+        }
+    ]
+}

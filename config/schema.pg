@@ -1,0 +1,47 @@
+node Product {
+    name: String @key
+    description: String?
+}
+
+node Feature {
+    name: String @key
+    description: String?
+}
+
+node Metric {
+    name: String @key
+    value: String?
+}
+
+node Persona {
+    name: String @key
+    description: String?
+}
+
+node ICPSegment {
+    name: String @key
+    description: String?
+}
+
+node Person {
+    name: String @key
+    role: String?
+}
+
+node EmailThread {
+    subject: String @key
+    body: String?
+    is_internal: Boolean?
+}
+
+node Decision {
+    title: String @key
+    description: String?
+}
+
+edge HAS_FEATURE: Product -> Feature
+edge PROVEN_BY: Product -> Metric
+edge TARGETS: Product -> ICPSegment
+edge TARGETS_PERSONA: ICPSegment -> Persona
+edge DISCUSSED_IN: Product -> EmailThread
+edge DECIDED_BY: Decision -> Person
