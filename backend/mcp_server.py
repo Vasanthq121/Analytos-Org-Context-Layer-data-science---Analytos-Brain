@@ -73,12 +73,15 @@ def get_entity_connections(agent_role: str, entity_id: str) -> str:
                 
     return json.dumps(results, indent=2)
 
+# Expose the app instance natively so uvicorn CLI can target it directly
+app = mcp.sse_app()
+
 if __name__ == "__main__":
     if os.getenv("PORT"):
         import uvicorn
         port = int(os.getenv("PORT", 8000))
         # Bind explicitly to 0.0.0.0 for public accessibility in cloud
-        uvicorn.run(mcp.sse_app(), host="0.0.0.0", port=port)
+        uvicorn.run(app, host="0.0.0.0", port=port)
     else:
         # Local execution for Claude Desktop (stdio)
         mcp.run()
