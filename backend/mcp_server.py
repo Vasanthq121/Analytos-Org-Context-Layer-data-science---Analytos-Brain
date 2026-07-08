@@ -74,4 +74,10 @@ def get_entity_connections(agent_role: str, entity_id: str) -> str:
     return json.dumps(results, indent=2)
 
 if __name__ == "__main__":
-    mcp.run()
+    if os.getenv("PORT"):
+        # If hosted in cloud (Render/Railway), serve via SSE on specified PORT
+        port = int(os.getenv("PORT", 8000))
+        mcp.run(transport="sse", port=port)
+    else:
+        # Local execution for Claude Desktop (stdio)
+        mcp.run()
