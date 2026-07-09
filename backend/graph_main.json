@@ -1,5 +1,5 @@
 {
-    "branch": "ingest/20260708225315",
+    "branch": "ingest/20260708225904",
     "nodes": [
         {
             "id": "product_stockly",
@@ -25,10 +25,10 @@
             }
         },
         {
-            "id": "persona_operations_manager",
+            "id": "persona_sales_manager",
             "label": "Persona",
             "properties": {
-                "title": "Operations Manager"
+                "title": "Sales Manager"
             }
         },
         {
@@ -48,10 +48,10 @@
             }
         },
         {
-            "id": "icp_healthcare_manufacturing",
+            "id": "icp_medtech",
             "label": "ICPSegment",
             "properties": {
-                "industry": "Healthcare Manufacturing"
+                "industry": "Medtech"
             }
         },
         {
@@ -69,17 +69,31 @@
             }
         },
         {
-            "id": "icp_enterprise_retail",
-            "label": "ICPSegment",
+            "id": "feature_easy_integration",
+            "label": "Feature",
             "properties": {
-                "industry": "Enterprise Retail"
+                "name": "Easy Integration"
             }
         },
         {
-            "id": "persona_vp_of_operations",
+            "id": "feature_clear_roi",
+            "label": "Feature",
+            "properties": {
+                "name": "Clear ROI"
+            }
+        },
+        {
+            "id": "icp_enterprise_retail,_mid-market_manufacturing",
+            "label": "ICPSegment",
+            "properties": {
+                "industry": "Enterprise Retail, Mid-market Manufacturing"
+            }
+        },
+        {
+            "id": "persona_vp_of_operations,_cio",
             "label": "Persona",
             "properties": {
-                "title": "VP of Operations"
+                "title": "VP of Operations, CIO"
             }
         },
         {
@@ -148,19 +162,19 @@
             }
         },
         {
-            "id": "proof_inventory_cost_reduction",
+            "id": "proof_inventory_costs_reduction",
             "label": "ProofPoint",
             "properties": {
-                "metric": "inventory cost reduction",
+                "metric": "inventory costs reduction",
                 "value": 22.0,
                 "unit": "%"
             }
         },
         {
-            "id": "icp_retail",
+            "id": "icp_retail_chains",
             "label": "ICPSegment",
             "properties": {
-                "industry": "Retail"
+                "industry": "Retail Chains"
             }
         },
         {
@@ -180,27 +194,37 @@
         {
             "source": "icp_retail",
             "relation": "HAS_PERSONA",
-            "target": "persona_operations_manager"
+            "target": "persona_sales_manager"
         },
         {
             "source": "product_inspectly",
             "relation": "TARGETS",
-            "target": "icp_healthcare_manufacturing"
+            "target": "icp_medtech"
         },
         {
-            "source": "icp_healthcare_manufacturing",
+            "source": "icp_medtech",
             "relation": "HAS_PERSONA",
             "target": "persona_vp_of_quality"
         },
         {
             "source": "product_analytos",
-            "relation": "TARGETS",
-            "target": "icp_enterprise_retail"
+            "relation": "HAS_FEATURE",
+            "target": "feature_easy_integration"
         },
         {
-            "source": "icp_enterprise_retail",
+            "source": "product_analytos",
+            "relation": "HAS_FEATURE",
+            "target": "feature_clear_roi"
+        },
+        {
+            "source": "product_analytos",
+            "relation": "TARGETS",
+            "target": "icp_enterprise_retail,_mid-market_manufacturing"
+        },
+        {
+            "source": "icp_enterprise_retail,_mid-market_manufacturing",
             "relation": "HAS_PERSONA",
-            "target": "persona_vp_of_operations"
+            "target": "persona_vp_of_operations,_cio"
         },
         {
             "source": "product_inspectly",
@@ -240,15 +264,15 @@
         {
             "source": "feature_ai_forecasting",
             "relation": "PROVEN_BY",
-            "target": "proof_inventory_cost_reduction"
+            "target": "proof_inventory_costs_reduction"
         },
         {
             "source": "product_stockly",
             "relation": "TARGETS",
-            "target": "icp_retail"
+            "target": "icp_retail_chains"
         },
         {
-            "source": "icp_retail",
+            "source": "icp_retail_chains",
             "relation": "HAS_PERSONA",
             "target": "persona_supply_chain_manager"
         }

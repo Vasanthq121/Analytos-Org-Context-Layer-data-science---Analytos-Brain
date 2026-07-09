@@ -27,7 +27,7 @@ graph_json = {
     "edges": [asdict(edge) for edge in graph.edges]
 }
 
-with open("graph_draft.json", "w") as f:
+with open("graph_main.json", "w") as f:
     json.dump(graph_json, f, indent=4)
 
-print("draft graph created")
+print("main graph created")
